@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa 🤣</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #surpresa {
+            display: none;
+            text-align: center;
+            animation: aparecer 0.4s ease-out forwards;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        img {
+            width: 300px;
+            user-select: none;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENSAGEM PERSONALIZÁVEL -->
+    <script>
+        const mensagemPersonalizada = "OTARIO KKKKKKK"; 
+        // Troque essa frase por qualquer mensagem!
+    </script>
+
+    <div id="surpresa">
+        <h1 id="mensagem"></h1>
+        <img src="macaco.png" alt="Animal dando dedo">
+    </div>
+
+    <!-- ÁUDIO (troque o link se quiser outro som) -->
+    <audio id="audioFunny" src="https://www.myinstants.com/media/sounds/trollolol.mp3"></audio>
+
+    <script>
+        setTimeout(() => {
+            // mostra o conteúdo
+            const box = document.getElementById("surpresa");
+            box.style.display = "block";
+
+            // coloca a mensagem
+            document.getElementById("mensagem").innerText = mensagemPersonalizada;
+
+            // toca o áudio
+            const audio = document.getElementById("audioFunny");
+            audio.play().catch(() => {
+                console.log("Autoplay bloqueado, usuário precisa interagir.");
+            });
+
+        }, 1000); // 1 segundo
+    </script>
+
+</body>
+</html>
